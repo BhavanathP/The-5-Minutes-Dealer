@@ -1,5 +1,4 @@
 # 5 Minute Dealer  
-_A Plug&Play Studio Prototype_  
 
 ## 🎮 Overview  
 A 2D arcade stealth-timing game made in Unity.  

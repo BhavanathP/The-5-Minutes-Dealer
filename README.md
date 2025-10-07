@@ -51,6 +51,7 @@ Examples:
 - Tasks tracked in Trello.  
 - Pick tasks from **This Sprint** column.  
 - Move card → `In Progress` → `Done` when complete.
+---
 
 # GDD - 5 Minutes Dealer
 - Game Title (Working): 5 Minute Dealer 

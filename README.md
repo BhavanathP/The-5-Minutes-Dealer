@@ -86,32 +86,32 @@ You’re a street hustler trying to make as much money as possible in 5 minutes.
 - If bar reaches 0 → buyer leaves unsatisfied. 
 - On successful sale → despawns, adds points/coins. 
 
-3. Pedestrians 
+*3. Pedestrians* 
 - Walk along street → purely cosmetic, adds life. 
 
-4. Cops 
+*4. Cops* 
 - Patrol on fixed or semi-random paths. 
 - If near a buyer while player selling → enter “suspicious state”. 
 - Show warning icon. 
 - After short delay, turns to face → if player still holding → busted. 
 - If no player activity → resumes patrol. 
 
-5. Progress Bar (Selling Mechanic) 
+*5. Progress Bar (Selling Mechanic)* 
 - UI bar above player during selling. 
 - Fills while holding E. 
 - Drains if released early. 
 - Success = full bar. 
 - Fail = bar reaches 0. 
 
-6. Score & Currency 
+*6. Score & Currency* 
 - Score = successful deals count (leaderboard metric). 
 - Coins = currency to unlock new products in shop. 
 
-7. Shop System 
+*7. Shop System* 
 - Between rounds: Buy stronger “products” (slower to sell, more profit). 
 - First iteration: just seeds/weed → cocaine → high-class drugs (or safe placeholders like "basic goods → rare goods"). 
 
-8. UI 
+*8. UI* 
 - In-game: Timer, Score, Coins (top bar). 
 - Game Over: Final score, coins collected, Restart. 
 - Shop: Simple grid of items to unlock with coins. 

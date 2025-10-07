@@ -236,12 +236,12 @@ Week 2 – Expansion & Polish
 2. PlayerInteraction tells ProgressBarController to start filling. 
 3. BuyerController locks state to “in deal”. 
 4. If Cop nearby & suspicious → CopController raises warning. 
- - WarningUI shows exclamation mark. 
- - After delay, cop turns. 
- - If still selling → GameManager → GameOver. 
+  - WarningUI shows exclamation mark. 
+  - After delay, cop turns. 
+  - If still selling → GameManager → GameOver. 
 5. If bar completes → ProgressBarController raises OnSaleSuccess. 
- - ScoreManager + CurrencyManager updated. 
- - Buyer leaves, cop resumes patrol. 
+  - ScoreManager + CurrencyManager updated. 
+  - Buyer leaves, cop resumes patrol. 
 
 ## Development Order (Suggested) ## 
 

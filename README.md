@@ -72,59 +72,71 @@ You’re a street hustler trying to make as much money as possible in 5 minutes.
 -  Earn money for completed sales. 
 -  5 minutes pass → final score and money shown. 
 ## Systems Breakdown 
-1. Player 
-● Movement: Left/right (A/D or arrow keys). 
-● Interaction: Hold E to sell → triggers progress bar. 
-2. Buyers 
+*1. Player* 
+- Movement: Left/right (A/D or arrow keys). 
+- Interaction: Hold E to sell → triggers progress bar. 
+
+*2. Buyers* 
 ● Spawn randomly on street. 
 ● Stay idle for X seconds before leaving. 
 ● If bar reaches 0 → buyer leaves unsatisfied. 
 ● On successful sale → despawns, adds points/coins. 
+
 3. Pedestrians 
 ● Walk along street → purely cosmetic, adds life. 
+
 4. Cops 
 ● Patrol on fixed or semi-random paths. 
 ● If near a buyer while player selling → enter “suspicious state”. 
 ● Show warning icon. 
 ● After short delay, turns to face → if player still holding → busted. 
 ● If no player activity → resumes patrol. 
+
 5. Progress Bar (Selling Mechanic) 
 ● UI bar above player during selling. 
 ● Fills while holding E. 
 ● Drains if released early. 
 ● Success = full bar. 
 ● Fail = bar reaches 0. 
+
 6. Score & Currency 
 ● Score = successful deals count (leaderboard metric). 
 ● Coins = currency to unlock new products in shop. 
+
 7. Shop System 
 ● Between rounds: Buy stronger “products” (slower to sell, more profit). 
 ● First iteration: just seeds/weed → cocaine → high-class drugs (or safe placeholders like 
 "basic goods → rare goods"). 
+
 8. UI 
 ● In-game: Timer, Score, Coins (top bar). 
 ● Game Over: Final score, coins collected, Restart. 
 ● Shop: Simple grid of items to unlock with coins. 
+
 ## Development Timeline (2 Weeks) 
+
 Week 1 – Core Systems 
 ● Player movement + interaction (progress bar mechanic). 
 ● Buyer spawn/despawn system. 
 ● Cop patrol AI + warning sign. 
 ● Progress bar fill/drain logic. 
+
 Week 2 – Expansion & Polish 
 ● Score & currency manager. 
 ● Shop system (basic seed unlocks). 
 ● Pedestrian filler NPCs. 
 ● Audio + placeholder art/VFX. 
 ● Playtest, bug fixes, polish, final build. 
+
 ## Art & Audio 
-● Pixel art style, side street background. 
-● Characters: Player, Buyers, Cops, Pedestrians. 
-● Audio: 
-○ Footsteps (player & cops). 
-○ Bar filling sound. 
-○ Cop warning cue. 
-○ Success & busted sounds. 
+- Pixel art style, side street background. 
+- Characters: Player, Buyers, Cops, Pedestrians. 
+- Audio: 
+-- Footsteps (player & cops). 
+-- Bar filling sound. 
+-- Cop warning cue. 
+-- Success & busted sounds. 
+
 ## Win/Lose Conditions 
-● Win = Survive until timer ends → high score. 
-● Lose = Caught by police before time ends.
+- Win = Survive until timer ends → high score. 
+- Lose = Caught by police before time ends.

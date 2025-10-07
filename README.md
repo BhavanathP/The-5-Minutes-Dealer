@@ -22,17 +22,8 @@ Game Over if you get caught dealing!
 - **Communication:** Slack (Plug&Play Studio)  
 
 ## 🚀 Development Timeline  
-**Week 1 – Core Systems**  
-● Player movement + interaction (progress bar mechanic). 
-● Buyer spawn/despawn system. 
-● Cop patrol AI + warning sign. 
-● Progress bar fill/drain logic.  
+**Week 1 – Core Systems**   
 
 **Week 2 – Expansion & Polish**  
-● Score & currency manager. 
-● Shop system (basic seed unlocks). 
-● Pedestrian filler NPCs. 
-● Audio + placeholder art/VFX. 
-● Playtest, bug fixes, polish, final build. 
 
 ---

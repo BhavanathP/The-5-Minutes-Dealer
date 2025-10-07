@@ -59,18 +59,18 @@ Examples:
 - Session Length: 5 minutes 
 ## Core Concept 
 You’re a street hustler trying to make as much money as possible in 5 minutes. 
-● Buyers spawn on the street → you must sell to them. 
-● Police patrol the area → if they spot you mid-deal, it’s Game Over. 
-● Selling requires holding a key to fill a progress bar. 
-● Watch for cop warning signs and release in time to avoid suspicion. 
+- Buyers spawn on the street → you must sell to them. 
+- Police patrol the area → if they spot you mid-deal, it’s Game Over. 
+- Selling requires holding a key to fill a progress bar. 
+- Watch for cop warning signs and release in time to avoid suspicion. 
 ## Core Gameplay Loop 
-1. Walk along the street (x-axis only). 
-2. Find a buyer → hold E to start selling. 
-3. Fill progress bar to complete the deal. 
-4. Cops patrol → if they near a buyer, watch for warning signs. 
-5. Release E if a cop’s about to turn. 
-6. Earn money for completed sales. 
-7. 5 minutes pass → final score and money shown. 
+-  Walk along the street (x-axis only).
+-  Find a buyer → hold E to start selling.
+-  Fill progress bar to complete the deal. 
+-  Cops patrol → if they near a buyer, watch for warning signs. 
+-  Release E if a cop’s about to turn. 
+-  Earn money for completed sales. 
+-  5 minutes pass → final score and money shown. 
 ## Systems Breakdown 
 1. Player 
 ● Movement: Left/right (A/D or arrow keys). 

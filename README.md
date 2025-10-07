@@ -27,7 +27,7 @@ Game Over if you get caught dealing!
 **Week 2 – Expansion & Polish**  
 
 ---
-# 👩‍💻 Contributing Guidelines – 5 Minute Farmer
+# 👩‍💻 Contributing Guidelines
 
 ## 🔀 Branching Model
 - `main` → stable release builds only  

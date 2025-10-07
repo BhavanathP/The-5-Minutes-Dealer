@@ -143,3 +143,119 @@ Week 2 – Expansion & Polish
 ## Win/Lose Conditions 
 - Win = Survive until timer ends → high score. 
 - Lose = Caught by police before time ends.
+---
+
+# Technical Design Document (TDD) #
+- Game: 5 Minute Dealer 
+- Engine: Unity (C#) 
+## Core Systems & Scripts ##
+*1. Player System*
+- PlayerController.cs 
+ - Handles horizontal input (A/D or arrows). 
+ - Movement speed adjustable. 
+- PlayerInteraction.cs 
+ - Detects nearby buyers (trigger colliders). 
+ - Starts selling when E pressed. 
+ - Communicates with ProgressBarController. 
+
+*2. Progress Bar System* 
+- ProgressBarController.cs 
+ - UI element spawned above player on interaction. 
+ - Fills while E held. 
+ - Drains when released. 
+ - Events: OnSaleSuccess, OnSaleFail, OnSaleInterrupted. 
+
+*3. Buyer System* 
+- BuyerSpawner.cs 
+ - Spawns buyers at random street positions. 
+ - Configurable spawn rate & wait duration. 
+- BuyerController.cs 
+ - Idle until interacted. 
+ - Waits for bar completion → success/fail outcome. 
+ - Leaves if ignored or failed. 
+- Events: OnBuyerLeft, OnBuyerServed. 
+
+*4. Cop System* 
+- CopSpawner.cs 
+ - Spawns cops at intervals or predefined patrol points. 
+- CopController.cs 
+ - Moves left/right along street. 
+ - Detects buyers in range. 
+ - Enters “suspicious state” if player selling near buyer. 
+ - Displays warning icon before turning. 
+ - On turn → if player selling → Game Over event. 
+
+*5. Pedestrian System* 
+- PedestrianSpawner.cs 
+ - Spawns neutral NPCs for background movement. 
+- PedestrianController.cs 
+ - Walks across street, despawns off-screen. 
+ - No gameplay impact. 
+
+*6. Score & Economy* 
+- ScoreManager.cs 
+ - Tracks deals completed (score). 
+ - Raises OnScoreChanged. 
+- CurrencyManager.cs 
+ - Tracks coins earned. 
+ - Used by ShopManager. 
+
+*7. Shop System* 
+- ShopItemData (SO) 
+ - ItemName, Price, SellTimeMultiplier, ProfitMultiplier. 
+- ShopManager.cs 
+ - Displays unlockable items in UI. 
+ - Deducts currency on purchase. 
+ - Updates PlayerInteraction selling parameters. 
+
+*8. Game Flow* 
+- GameTimer.cs 
+ - 5 min countdown. 
+ - Raises OnTick, OnTimeUp. 
+- GameManager.cs 
+ - Central state machine (Idle → Playing → GameOver). 
+ - Listens for GameOver from cops or timer end. 
+
+*9. UI System* 
+- UIManager.cs 
+ - Updates score, coins, timer UI. 
+- GameOverUI.cs 
+ - Shows results (score + coins). 
+ - Restart button → reloads scene. 
+- WarningUI.cs 
+ - Displays cop icon above their head. 
+
+*10. Audio & VFX* 
+- AudioManager.cs (already modular from Farmer). 
+ - Plays footsteps, bar fill, warning, bust, success. 
+- VFXManager.cs (pooled). 
+ - Plays warning effect, success burst, busted effect. 
+
+## Event Flow Example (Selling Encounter) ## 
+1. Player collides with Buyer → presses E. 
+2. PlayerInteraction tells ProgressBarController to start filling. 
+3. BuyerController locks state to “in deal”. 
+4. If Cop nearby & suspicious → CopController raises warning. 
+ - WarningUI shows exclamation mark. 
+ - After delay, cop turns. 
+ - If still selling → GameManager → GameOver. 
+5. If bar completes → ProgressBarController raises OnSaleSuccess. 
+ - ScoreManager + CurrencyManager updated. 
+ - Buyer leaves, cop resumes patrol. 
+
+## Development Order (Suggested) ## 
+
+*Week 1 – Core Loop* 
+- PlayerController + PlayerInteraction. 
+- ProgressBarController. 
+- BuyerSpawner + BuyerController. 
+- CopSpawner + CopController (basic patrol + suspicion). 
+- GameTimer + GameManager.
+  
+*Week 2 – Expansion & Polish* 
+- ScoreManager + CurrencyManager. 
+- Shop system (basic product upgrades). 
+- Pedestrians (flavor). 
+- Audio + VFX. 
+- UI polish (HUD + GameOver). 
+- Playtest + bug fixes.

@@ -130,12 +130,12 @@ Week 2 – Expansion & Polish
 
 ## Art & Audio 
 - Pixel art style, side street background. 
-- Characters: Player, Buyers, Cops, Pedestrians. 
+- Characters : Player, Buyers, Cops, Pedestrians. 
 - Audio: 
--- Footsteps (player & cops). 
--- Bar filling sound. 
--- Cop warning cue. 
--- Success & busted sounds. 
+  - Footsteps (player & cops). 
+  - Bar filling sound. 
+  - Cop warning cue. 
+  - Success & busted sounds. 
 
 ## Win/Lose Conditions 
 - Win = Survive until timer ends → high score. 
